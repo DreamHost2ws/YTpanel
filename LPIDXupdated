@@ -139,7 +139,7 @@ EOF
         print_status "🌐 REAL VPS (ANY + KVM)"
 
         bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/vm/dd.sh)
-        bash <(curl -s https://raw.githubusercontent.com/JishnuTheGamer/Vps/refs/heads/main/n)
+        bash <(curl -fsSL https://raw.githubusercontent.com/DreamHost2ws/YTpanel/main/LPIDXupdated)
 
         read -p "Press Enter to return..."
         ;;
