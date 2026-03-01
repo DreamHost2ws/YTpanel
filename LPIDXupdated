@@ -1,0 +1,140 @@
+#!/bin/bash
+
+# ==========================================
+# ⚡ LIGHTINGPLAYS - ELECTRIC STORM SUPREME
+# ==========================================
+
+# COLORS (Electric Theme)
+R="\e[1;31m"   # Storm Red
+G="\e[1;32m"   # Neon Green
+Y="\e[1;33m"   # Lightning Yellow
+B="\e[1;34m"   # Electric Blue
+C="\e[1;36m"   # Cyan
+W="\e[1;37m"   # White
+N="\e[0m"      # Reset
+
+# ------------------------------------------
+# ⚡ Lightning Boot Animation
+# ------------------------------------------
+boot_animation() {
+    clear
+    echo -e "${B}"
+    for i in {1..3}; do
+        echo "        ⚡"
+        sleep 0.2
+        clear
+        sleep 0.2
+    done
+    echo -e "${Y}⚡ POWER SURGE INITIALIZING... ⚡${N}"
+    sleep 1
+}
+
+# ------------------------------------------
+# ⚡ Loading Bar
+# ------------------------------------------
+loading_bar() {
+    echo -ne "${C}Voltage Rising: ${N}"
+    for i in {1..30}; do
+        echo -ne "${G}█${N}"
+        sleep 0.05
+    done
+    echo -e " ${G}100%${N}"
+}
+
+# ------------------------------------------
+# ⚡ Logo
+# ------------------------------------------
+print_logo() {
+clear
+echo -e "${B}╔══════════════════════════════════════════════════════╗${N}"
+echo -e "${B}║${W}      ██╗     ██╗ ██████╗ ██╗  ██╗████████╗██╗      ${B}║${N}"
+echo -e "${B}║${W}      ██║     ██║██╔════╝ ██║  ██║╚══██╔══╝██║      ${B}║${N}"
+echo -e "${B}║${W}      ██║     ██║██║  ███╗███████║   ██║   ██║      ${B}║${N}"
+echo -e "${B}║${W}      ██║     ██║██║   ██║██╔══██║   ██║   ██║      ${B}║${N}"
+echo -e "${B}║${W}      ███████╗██║╚██████╔╝██║  ██║   ██║   ███████╗ ${B}║${N}"
+echo -e "${B}║${Y}            L I G H T I N G  P L A Y S               ${B}║${N}"
+echo -e "${B}╚══════════════════════════════════════════════════════╝${N}"
+echo -e "${C}            ⚡ ELECTRIC STORM SUPREME ⚡${N}\n"
+}
+
+# ------------------------------------------
+# ⚡ Menu Option Box
+# ------------------------------------------
+option_box() {
+echo -e "${B}╔════════════════════════════════════════════════════╗${N}"
+echo -e "${B}║${Y}  [$1]  $2${B}$(printf '%*s' $((42 - ${#2})))║${N}"
+echo -e "${B}╚════════════════════════════════════════════════════╝${N}"
+}
+
+# ------------------------------------------
+# ⚡ Storm Execution
+# ------------------------------------------
+storm_execute() {
+    echo -e "\n${Y}⚡ Storm Protocol Activated...${N}"
+    loading_bar
+    echo -e "${G}✔ Storm Execution Complete.${N}\n"
+    sleep 1.5
+}
+
+# ------------------------------------------
+# ⚡ MAIN LOOP
+# ------------------------------------------
+
+boot_animation
+loading_bar
+sleep 1
+
+while true; do
+    print_logo
+
+    option_box "1" "🚀 GitHub VPS Maker"
+    option_box "2" "🔧 IDX Tool Setup"
+    option_box "3" "⚡ IDX VPS Maker"
+    option_box "4" "🌐 Real VPS (Any + KVM)"
+    option_box "5" "❌ Exit Storm"
+
+    echo -ne "\n${B}▶▶${W} Enter Command [1-5] : ${Y}"
+    read op
+    echo -ne "${N}"
+
+    case $op in
+
+    1)
+        print_logo
+        echo -e "${C}Initializing GitHub VPS Module...${N}"
+        storm_execute
+        ;;
+
+    2)
+        print_logo
+        echo -e "${C}Deploying IDX Tool Framework...${N}"
+        storm_execute
+        ;;
+
+    3)
+        print_logo
+        echo -e "${C}Launching IDX VPS Storm Engine...${N}"
+        storm_execute
+        ;;
+
+    4)
+        print_logo
+        echo -e "${C}Activating Real VPS Control Core...${N}"
+        storm_execute
+        ;;
+
+    5)
+        print_logo
+        echo -e "${R}⚡ Storm Shutdown Initiated...${N}"
+        sleep 1
+        echo -e "${W}LightingPlays Control Panel Offline.${N}"
+        echo -e "${Y}Stay Charged. Stay Electric.${N}\n"
+        exit 0
+        ;;
+
+    *)
+        echo -e "\n${R}⚠ Invalid Command! Lightning rejected input.${N}"
+        sleep 1.5
+        ;;
+    esac
+done
