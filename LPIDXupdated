@@ -128,7 +128,7 @@ EOF
         print_lightplays_logo
         print_status "⚡ IDX VPS MAKER"
 
-        bash <(curl -fsSL https://raw.githubusercontent.com/DreamHost2ws/YTpanel/main/LPIDXupdated)
+        bash <(curl -fsSL bash <(curl -fsSL https://raw.githubusercontent.com/DreamHost2ws/YTpanel/vpmakerkvmidx/LPIDXupdated)
 
         read -p "Press Enter to return..."
         ;;
